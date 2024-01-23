@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Yantramanav:wght@500&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #79B4A9;
+  overflow-x: hidden;
+}
+
+.container {
+  background-color: #fff;
+  min-width: 470px;
+  min-height: 360px;
+  padding: 70px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  font-family: "Yantramanav", sans-serif;
+}
+
+.heading {
+  color: #346b50;
+  margin-bottom: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 2.8rem;
+}
+
+.rate {
+}
+
+.rate1 {
+  color: #848484;
+}
+
+.rate2 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.swap {
+  align-self: flex-end;
+  padding: 5px;
+  flex-shrink: 0;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.options select {
+  padding: 2%;
+  width: 100%;
+}
+
+.input input {
+  width: 100%;
+  margin-top: 1rem;
+  height: 48px;
+  padding: 5px;
+  background-color: #ebebeb;
+  color: #848484;
+  font-size: 1.5rem;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-weight: 500;
+  appearance: textfield;
+}
+
+.target {
+  flex-grow: 1;
+}
+
+.result {
+  margin-top: 1.5rem;
+  height: 50px;
+  text-align: center;
+  color: #fff;
+  background-color: #346b50;
+  outline: none;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+.result:active {
+  background-color: #e3faef;
+}
+
+#errorMessage {
+  color: red;
+  visibility: hidden;
+}

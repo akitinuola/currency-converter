@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#346b50">
+  <meta name="description" content="This is the description">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // main.js
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then((registration) => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
+        });
+    }
+
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="heading">Currency Converter</h2>
+    <div class="rate">
+      <div class="rate1"></div>
+      <div class="rate2"></div>
+    </div>
+    <p>Last updated at: <span id="updateDate"></span></p>
+    <p id="errorMessage">Source value is invalid.</p>
+    <div class="main">
+      <div class="initial">
+        <label for="sourceDropdown">Source Currency</label>
+        <div class="options">
+          <select name="sourceDropdown" id="sourceDropdown"></select>
+        </div>
+        <br>
+        <label for="sourceValue">You have:</label>
+        <div class="input">
+          <input type="number" name="sourceValue" id="sourceValue" >
+        </div>
+      </div>
+      <div style="width: 36px" class="swap">
+        <img src="assets/swap.svg" alt="swap icon" >
+      </div>
+      <div class="target">
+        <label for="destinationDropdown">Destination Currency</label>
+        <div class="options">
+          <select name="destinationDropdown" id="destinationDropdown"></select>
+        </div>
+        <br>
+        <label for="destinationValue">You get:</label>
+        <div class="input">
+          <input disabled type="number" name="destinationValue" id="destinationValue" >
+        </div>
+      </div>
+    </div>
+    <p>Can only convert between 0 and 999,999</p>
+    <button class="result">Convert</button>
+  </div>
+  <script src="sketch.js"></script>
+  <script src="service-worker.js"></script>
+</body>
+
+</html>
